@@ -1,0 +1,60 @@
+@startuml Assessment System
+
+skinparam componentStyle uml2
+skinparam component {
+    BackgroundColor<<Agent>> LightYellow
+    BackgroundColor<<Tool>> LightGray
+    BackgroundColor<<Data>> LightGreen
+    BackgroundColor<<External>> Pink
+}
+
+package "Assessment Generation" {
+    [Quiz Generator Agent] <<Agent>> as quiz_agent
+    [Quiz Generation Tool] <<Tool>> as quiz_tool
+}
+
+package "Form Management" {
+    [Form Distribution Agent] <<Agent>> as form_agent
+    [Form Distribution Tool] <<Tool>> as form_tool
+}
+
+package "External Services" {
+    [Google Forms API] <<External>> as google_forms
+    [Email Service (SMTP)] <<External>> as email_service
+}
+
+database "Assessment Data" {
+    [Quiz Questions] <<Data>> as quiz_data
+    [Assessment Results] <<Data>> as results_data
+    [Candidate Emails] <<Data>> as email_data
+}
+
+' Quiz Generation Flow
+quiz_agent --> quiz_tool : "1. Generate Questions"
+quiz_tool --> quiz_data : "Store Questions"
+
+' Form Distribution Flow
+form_agent --> form_tool : "1. Create Form"
+form_tool --> google_forms : "2. Generate Form"
+form_agent --> email_service : "3. Send Invites"
+
+' Data Flow
+quiz_data --> form_tool : "Questions"
+form_tool --> results_data : "Responses"
+email_data --> form_agent : "Contact Info"
+
+note right of google_forms
+  Forms are created with:
+  - Multiple choice questions
+  - Automatic scoring
+  - Time limits
+end note
+
+note right of email_service
+  Emails include:
+  - Personal link
+  - Instructions
+  - Deadline
+end note
+
+@enduml 

@@ -1,0 +1,36 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+AGENTOPS_API_KEY = os.getenv("AGENTOPS_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+LLM_MODEL = os.getenv("LLM_MODEL")  
+OUTPUT_QUIZ_DIR = os.getenv("OUTPUT_QUIZ_DIR")
+
+OUTPUT_OFFER_DIR=os.getenv("OUTPUT_OFFER_DIR")
+OUTPUT_CV_DIR=os.getenv("OUTPUT_CV_DIR")
+OUTPUT_CLASSIF_DIR=os.getenv("OUTPUT_CLASSIF_DIR")
+
+NUM_QUIZ_QUESTIONS = os.getenv("NUM_QUIZ_QUESTIONS")
+QUIZ_LEVEL = os.getenv("QUIZ_LEVEL")
+CANDIDATES_NUMBER = int(os.getenv("CANDIDATES_NUMBER", "10"))  # Default to top 10 candidates
+
+MONGO_URI=os.getenv("MONGO_URI")
+CONTEXT_API_URL = os.getenv("CONTEXT_API_URL")
+PREDICT_API_URL = os.getenv("PREDICT_API_URL")
+
+EMBEDDING_MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME")
+COLLECTION_NAME = os.getenv("COLLECTION_NAME")
+QDRANT_HOST = os.getenv("QDRANT_HOST")
+QDRANT_PORT = int(os.getenv("QDRANT_PORT", 6333))  
+
+DATASET_PATH = os.getenv("DATASET_PATH")
+CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", 10))
+COLLECTION_NAME = os.getenv("COLLECTION_NAME")
+EMBEDDING_MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME")
+QDRANT_URL = os.getenv("QDRANT_URL")
+
+MONGO_URI = os.getenv("MONGO_URI")
+MAX_CVS = int(os.getenv("MAX_CVS"))
+AGENTOPS_API_KEY = os.getenv("AGENTOPS_API_KEY")

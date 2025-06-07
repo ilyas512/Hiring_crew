@@ -1,0 +1,159 @@
+```json
+{
+  "offer_id": "68245d91b285ae9b4f846cd9",
+  "offer_title": "Java Backend Developer",
+  "hard_skills": [
+    "spring boot",
+    "rest api",
+    "jpa/hibernate",
+    "postgresql",
+    "mysql",
+    "mongodb",
+    "maven",
+    "gradle",
+    "git",
+    "ci/cd",
+    "docker",
+    "kubernetes",
+    "aws",
+    "gcp",
+    "kafka",
+    "rabbitmq",
+    "elk stack",
+    "prometheus",
+    "grafana"
+  ],
+  "quiz": {
+    "jpa/hibernate": [
+      {
+        "Question": "In Java EE applications, what is the purpose of the `@PersistenceContext` annotation?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To inject a container-managed persistence context into a component",
+        "D": "To create JavaBeans",
+        "Answer": "C"
+      },
+      {
+        "Question": "What does the `@Singleton` annotation indicate in Java EE applications?",
+        "A": "To execute SQL queries",
+        "B": "That a class should be instantiated only once per application",
+        "C": "To create JavaBeans",
+        "D": "None of These",
+        "Answer": "B"
+      },
+      {
+        "Question": "In Java web applications, what is the purpose of the `@RequestScoped` annotation?",
+        "A": "To create JavaBeans",
+        "B": "To execute SQL queries",
+        "C": "To indicate that a bean's scope is limited to a single HTTP request",
+        "D": "To define JavaBean properties",
+        "Answer": "C"
+      }
+    ],
+    "mysql": [
+      {
+        "Question": "What does MySQL primarily function as?",
+        "A": "A web server",
+        "B": "A database management system",
+        "C": "A programming language",
+        "D": "A browser",
+        "Answer": "B"
+      },
+      {
+        "Question": "Which SQL statement is used to remove data from a MySQL database?",
+        "A": "DELETE",
+        "B": "REMOVE",
+        "C": "CLEAR",
+        "D": "ERASE",
+        "Answer": "A"
+      },
+      {
+        "Question": "Which command is used to access a MySQL database via command line?",
+        "A": "mysql -u user -p",
+        "B": "ssh database",
+        "C": "connect to mysql",
+        "D": "open mysql",
+        "Answer": "A"
+      }
+    ],
+    "postgresql": [
+      {
+        "Question": "In Java EE applications, what is the purpose of the `@PersistenceContext` annotation?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To inject a container-managed persistence context into a component",
+        "D": "To create JavaBeans",
+        "Answer": "C"
+      },
+      {
+        "Question": "What does the `@Singleton` annotation indicate in Java EE applications?",
+        "A": "To execute SQL queries",
+        "B": "That a class should be instantiated only once per application",
+        "C": "To create JavaBeans",
+        "D": "None of These",
+        "Answer": "B"
+      },
+      {
+        "Question": "In Java web applications, what is the purpose of the `@RequestScoped` annotation?",
+        "A": "To create JavaBeans",
+        "B": "To execute SQL queries",
+        "C": "To indicate that a bean's scope is limited to a single HTTP request",
+        "D": "To define JavaBean properties",
+        "Answer": "C"
+      }
+    ],
+    "rest api": [
+      {
+        "Question": "How do APIs improve RPA automation compared to UI-based automation?",
+        "A": "APIs provide faster and more stable interactions",
+        "B": "APIs require more screen recording",
+        "C": "APIs make bots work slower",
+        "D": "APIs are only for front-end automation",
+        "Answer": "A"
+      },
+      {
+        "Question": "What is required to authenticate an API call in RPA?",
+        "A": "API key or OAuth token",
+        "B": "Screen recording",
+        "C": "Manual user input",
+        "D": "No authentication required",
+        "Answer": "A"
+      },
+      {
+        "Question": "Why is error handling important in API-based RPA automation?",
+        "A": "API responses can vary or fail due to network issues",
+        "B": "APIs always return successful responses",
+        "C": "APIs do not handle authentication",
+        "D": "Bots do not interact with APIs",
+        "Answer": "A"
+      }
+    ],
+    "spring boot": [
+      {
+        "Question": "What is the primary feature of Spring Boot?",
+        "A": "Simplifies data access",
+        "B": "Automates code generation",
+        "C": "Simplifies project setup",
+        "D": "Enhances UI design",
+        "Answer": "C"
+      },
+      {
+        "Question": "Which build tool is used by Spring Boot?",
+        "A": "Maven",
+        "B": "Ant",
+        "C": "Gradle",
+        "D": "CMake",
+        "Answer": "A"
+      },
+      {
+        "Question": "What does the @SpringBootApplication annotation do?",
+        "A": "Enables JDBC",
+        "B": "Configures a web application",
+        "C": "Declares a configuration class",
+        "D": "Starts a Spring context",
+        "Answer": "C"
+      }
+    ]
+  }
+}
+```

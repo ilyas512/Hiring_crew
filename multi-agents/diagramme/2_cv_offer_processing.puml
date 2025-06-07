@@ -1,0 +1,45 @@
+@startuml CV and Job Offer Processing
+
+skinparam componentStyle uml2
+skinparam component {
+    BackgroundColor<<Agent>> LightYellow
+    BackgroundColor<<Tool>> LightGray
+    BackgroundColor<<Data>> LightGreen
+}
+
+package "Job Offer Processing" {
+    [Job Offer Agent] <<Agent>> as job_agent
+    [Job Offer Fetcher Tool] <<Tool>> as job_tool
+    [Entity Extractor Tool] <<Tool>> as entity_tool
+}
+
+package "CV Processing" {
+    [CV Analysis Agent] <<Agent>> as cv_agent
+    [CV Ranker Agent] <<Agent>> as rank_agent
+    [CV Fetcher Tool] <<Tool>> as cv_tool
+    [CV Entity Extractor] <<Tool>> as cv_entity_tool
+}
+
+database "MongoDB" {
+    [Job Offers Collection] <<Data>> as job_data
+    [CVs Collection] <<Data>> as cv_data
+    [Ranking Results] <<Data>> as rank_data
+}
+
+' Job Processing Flow
+job_agent --> job_tool : "1. Fetch Offer"
+job_tool --> job_data : "Store"
+job_agent --> entity_tool : "2. Extract Skills"
+
+' CV Processing Flow
+cv_agent --> cv_tool : "1. Fetch CVs"
+cv_tool --> cv_data : "Read/Write"
+cv_agent --> cv_entity_tool : "2. Extract Info"
+cv_entity_tool --> rank_agent : "3. Pass Data"
+rank_agent --> rank_data : "4. Store Results"
+
+' Data Dependencies
+job_data ..> cv_agent : "Required Skills"
+cv_data ..> rank_agent : "CV Content"
+
+@enduml 

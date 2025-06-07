@@ -1,0 +1,112 @@
+@startuml Global System Architecture
+
+!define RECTANGLE class
+
+' Style global
+skinparam backgroundColor white
+skinparam componentStyle uml2
+
+' Styles spécifiques
+skinparam {
+    PackageBorderColor black
+    PackageFontStyle bold
+    
+    ComponentFontSize 12
+    ComponentFontStyle bold
+    
+    DatabaseBackgroundColor white
+    DatabaseBorderColor black
+    
+    NoteBackgroundColor #FFF9C4
+    NoteBorderColor #827717
+    NoteFontSize 11
+}
+
+' Définition des couleurs plus vives
+!define CORE_COLOR #4FC3F7
+!define AGENT_COLOR #FFF176
+!define STORAGE_COLOR #81C784
+!define EXTERNAL_COLOR #F48FB1
+!define CONFIG_COLOR #B0BEC5
+
+package "Multi-Agent Recruitment System" {
+    package "Core System" {
+        [CrewAI Orchestrator] $CORE_COLOR
+        [Configuration Manager] $CORE_COLOR
+        [Environment Handler] $CORE_COLOR
+    }
+
+    package "Agent Layer" {
+        [Job Offer Agent] $AGENT_COLOR
+        [CV Analysis Agent] $AGENT_COLOR
+        [CV Ranker Agent] $AGENT_COLOR
+        [Quiz Generator Agent] $AGENT_COLOR
+        [Form Distribution Agent] $AGENT_COLOR
+    }
+
+    package "Storage Layer" {
+        database "MongoDB" {
+            [Job Offers Collection] $STORAGE_COLOR
+            [CVs Collection] $STORAGE_COLOR
+            [Quiz Collection] $STORAGE_COLOR
+            [Results Collection] $STORAGE_COLOR
+        }
+        database "Qdrant" {
+            [Vector Store] $STORAGE_COLOR
+        }
+    }
+
+    package "External Services" {
+        [Google Forms API] $EXTERNAL_COLOR
+        [SMTP Server] $EXTERNAL_COLOR
+        [Gemini Pro API] $EXTERNAL_COLOR
+    }
+
+    package "Configuration" {
+        [LLM Config] $CONFIG_COLOR
+        [API Keys] $CONFIG_COLOR
+        [Environment Variables] $CONFIG_COLOR
+    }
+}
+
+' Relations avec des couleurs plus visibles
+crew --> job_agent : <color:#2196F3>orchestrates</color>
+crew --> cv_agent : <color:#2196F3>orchestrates</color>
+crew --> rank_agent : <color:#2196F3>orchestrates</color>
+crew --> quiz_agent : <color:#2196F3>orchestrates</color>
+crew --> form_agent : <color:#2196F3>orchestrates</color>
+
+' Storage Relations
+job_agent --> [Job Offers Collection] : <color:#4CAF50>CRUD</color>
+cv_agent --> [CVs Collection] : <color:#4CAF50>CRUD</color>
+quiz_agent --> [Quiz Collection] : <color:#4CAF50>CRUD</color>
+form_agent --> [Results Collection] : <color:#4CAF50>CRUD</color>
+quiz_agent --> [Vector Store] : <color:#4CAF50>search</color>
+
+' External Service Relations
+quiz_agent --> [Gemini Pro API] : <color:#E91E63>generates content</color>
+form_agent --> [Google Forms API] : <color:#E91E63>creates forms</color>
+form_agent --> [SMTP Server] : <color:#E91E63>sends emails</color>
+
+' Configuration Relations
+config --> [LLM Config] : <color:#607D8B>loads</color>
+config --> [API Keys] : <color:#607D8B>manages</color>
+config --> [Environment Variables] : <color:#607D8B>loads</color>
+
+note right of crew
+<color:#827717>Sequential Workflow:
+1. Process Job Offer
+2. Analyze CVs
+3. Rank Candidates
+4. Generate Quiz
+5. Distribute Forms</color>
+end note
+
+note right of [Vector Store]
+<color:#827717>Stores:
+- Technical Questions
+- Documentation
+- Sample Questions</color>
+end note
+
+@enduml 

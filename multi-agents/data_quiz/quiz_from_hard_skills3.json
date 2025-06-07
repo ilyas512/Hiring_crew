@@ -1,0 +1,439 @@
+
+{
+  "offer_id": "68245d91b285ae9b4f846cd9",
+  "offer_title": "Java Backend Developer",
+  "hard_skills": [
+    "spring boot",
+    "rest api",
+    "jpa/hibernate",
+    "postgresql",
+    "mysql",
+    "mongodb",
+    "maven",
+    "gradle",
+    "git",
+    "ci/cd",
+    "docker",
+    "kubernetes",
+    "aws",
+    "gcp",
+    "kafka",
+    "rabbitmq",
+    "elk stack",
+    "prometheus",
+    "grafana",
+    "java"
+  ],
+  "quiz": {
+    "jpa/hibernate": [
+      {
+        "Question": "In Java EE applications, what is the purpose of the `@PersistenceContext` annotation?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To inject a container-managed persistence context into a component",
+        "D": "To create JavaBeans",
+        "Answer": "C"
+      },
+      {
+        "Question": "What does the `@Singleton` annotation indicate in Java EE applications?",
+        "A": "To execute SQL queries",
+        "B": "That a class should be instantiated only once per application",
+        "C": "To create JavaBeans",
+        "D": "None of These",
+        "Answer": "B"
+      },
+      {
+        "Question": "In Java web applications, what is the purpose of the `@RequestScoped` annotation?",
+        "A": "To create JavaBeans",
+        "B": "To execute SQL queries",
+        "C": "To indicate that a bean's scope is limited to a single HTTP request",
+        "D": "To define JavaBean properties",
+        "Answer": "C"
+      },
+      {
+        "Question": "What is the purpose of the `@WebInitParam` annotation in a servlet declaration?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To create JavaBeans",
+        "D": "To specify initialization parameters for a servlet",
+        "Answer": "D"
+      },
+      {
+        "Question": "In Java EE applications, what is the primary role of the `@MessageDriven` annotation?",
+        "A": "To indicate that a class is a message-driven bean (MDB)",
+        "B": "To define JavaBean properties",
+        "C": "To execute SQL queries",
+        "D": "To create JavaBeans",
+        "Answer": "A"
+      },
+      {
+        "Question": "Which annotation is used to specify a custom error page for a specific exception type in a Java web application?",
+        "A": "@WebListener",
+        "B": "@WebServlet",
+        "C": "@WebFilter",
+        "D": "@ErrorPage",
+        "Answer": "D"
+      },
+      {
+        "Question": "What is the purpose of the `@Produces` annotation in Java EE applications?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To specify the media type produced by a resource method",
+        "D": "To create JavaBeans",
+        "Answer": "C"
+      },
+      {
+        "Question": "In a Java web application, what is the role of the `@MultipartConfig` annotation?",
+        "A": "To execute SQL queries",
+        "B": "To enable support for file uploads in a servlet",
+        "C": "To create JavaBeans",
+        "D": "None of These",
+        "Answer": "B"
+      },
+      {
+        "Question": "What is the purpose of the `@AroundInvoke` annotation in Java EE applications?",
+        "A": "To create JavaBeans",
+        "B": "To execute SQL queries",
+        "C": "To intercept business method invocations",
+        "D": "To define JavaBean properties",
+        "Answer": "C"
+      },
+      {
+        "Question": "In a Java EE application, what is the primary role of the `@Stateless` annotation?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To create JavaBeans",
+        "D": "To indicate that a class is a stateless session bean",
+        "Answer": "D"
+      }
+    ],
+    "mysql": [
+      {
+        "Question": "What does MySQL primarily function as?",
+        "A": "A web server",
+        "B": "A database management system",
+        "C": "A programming language",
+        "D": "A browser",
+        "Answer": "B"
+      },
+      {
+        "Question": "Which SQL statement is used to remove data from a MySQL database?",
+        "A": "DELETE",
+        "B": "REMOVE",
+        "C": "CLEAR",
+        "D": "ERASE",
+        "Answer": "A"
+      },
+      {
+        "Question": "Which command is used to access a MySQL database via command line?",
+        "A": "mysql -u user -p",
+        "B": "ssh database",
+        "C": "connect to mysql",
+        "D": "open mysql",
+        "Answer": "A"
+      },
+      {
+        "Question": "MySQL belongs to which category of database management systems?",
+        "A": "Hierarchical DBMS",
+        "B": "Network DBMS",
+        "C": "Relational DBMS",
+        "D": "Object-oriented DBMS",
+        "Answer": "C"
+      },
+      {
+        "Question": "In MySQL, what does the AUTO_INCREMENT attribute automatically add to a column?",
+        "A": "Random numbers",
+        "B": "A timestamp",
+        "C": "Unique identifiers incrementally",
+        "D": "Fixed numbers",
+        "Answer": "C"
+      },
+      {
+        "Question": "What does the following MySQL command do?\nCREATE DATABASE SampleDB;",
+        "A": "Creates a new table named SampleDB",
+        "B": "Creates a new schema named SampleDB",
+        "C": "Creates a new database named SampleDB",
+        "D": "Deletes the database SampleDB",
+        "Answer": "C"
+      },
+      {
+        "Question": "Identify the issue in the following SQL statement:\nSELECT FROM users WHERE username='admin';",
+        "A": "SELECT clause is incomplete",
+        "B": "WHERE clause is incorrect",
+        "C": "Syntax is correct",
+        "D": "Missing semicolon",
+        "Answer": "A"
+      },
+      {
+        "Question": "Which SQL clause is used to filter the records returned from a SQL query?",
+        "A": "FROM",
+        "B": "WHERE",
+        "C": "SELECT",
+        "D": "ORDER BY",
+        "Answer": "B"
+      },
+      {
+        "Question": "SQL keywords are case sensitive.",
+        "A": "All keywords are sensitive",
+        "B": "Some are sensitive",
+        "C": "None are sensitive",
+        "D": "Depends on version",
+        "Answer": "C"
+      },
+      {
+        "Question": "What does the DISTINCT keyword do in a SQL query?",
+        "A": "Removes duplicates from results",
+        "B": "Creates a distinct file",
+        "C": "Orders results",
+        "D": "Counts rows",
+        "Answer": "A"
+      }
+    ],
+    "postgresql": [
+      {
+        "Question": "In Java EE applications, what is the purpose of the `@PersistenceContext` annotation?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To inject a container-managed persistence context into a component",
+        "D": "To create JavaBeans",
+        "Answer": "C"
+      },
+      {
+        "Question": "What does the `@Singleton` annotation indicate in Java EE applications?",
+        "A": "To execute SQL queries",
+        "B": "That a class should be instantiated only once per application",
+        "C": "To create JavaBeans",
+        "D": "None of These",
+        "Answer": "B"
+      },
+      {
+        "Question": "In Java web applications, what is the purpose of the `@RequestScoped` annotation?",
+        "A": "To create JavaBeans",
+        "B": "To execute SQL queries",
+        "C": "To indicate that a bean's scope is limited to a single HTTP request",
+        "D": "To define JavaBean properties",
+        "Answer": "C"
+      },
+      {
+        "Question": "What is the purpose of the `@WebInitParam` annotation in a servlet declaration?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To create JavaBeans",
+        "D": "To specify initialization parameters for a servlet",
+        "Answer": "D"
+      },
+      {
+        "Question": "In Java EE applications, what is the primary role of the `@MessageDriven` annotation?",
+        "A": "To indicate that a class is a message-driven bean (MDB)",
+        "B": "To define JavaBean properties",
+        "C": "To execute SQL queries",
+        "D": "To create JavaBeans",
+        "Answer": "A"
+      },
+      {
+        "Question": "Which annotation is used to specify a custom error page for a specific exception type in a Java web application?",
+        "A": "@WebListener",
+        "B": "@WebServlet",
+        "C": "@WebFilter",
+        "D": "@ErrorPage",
+        "Answer": "D"
+      },
+      {
+        "Question": "What is the purpose of the `@Produces` annotation in Java EE applications?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To specify the media type produced by a resource method",
+        "D": "To create JavaBeans",
+        "Answer": "C"
+      },
+      {
+        "Question": "In a Java web application, what is the role of the `@MultipartConfig` annotation?",
+        "A": "To execute SQL queries",
+        "B": "To enable support for file uploads in a servlet",
+        "C": "To create JavaBeans",
+        "D": "None of These",
+        "Answer": "B"
+      },
+      {
+        "Question": "What is the purpose of the `@AroundInvoke` annotation in Java EE applications?",
+        "A": "To create JavaBeans",
+        "B": "To execute SQL queries",
+        "C": "To intercept business method invocations",
+        "D": "To define JavaBean properties",
+        "Answer": "C"
+      },
+      {
+        "Question": "In a Java EE application, what is the primary role of the `@Stateless` annotation?",
+        "A": "To define JavaBean properties",
+        "B": "To execute SQL queries",
+        "C": "To create JavaBeans",
+        "D": "To indicate that a class is a stateless session bean",
+        "Answer": "D"
+      }
+    ],
+    "rest api": [
+      {
+        "Question": "How do APIs improve RPA automation compared to UI-based automation?",
+        "A": "APIs provide faster and more stable interactions",
+        "B": "APIs require more screen recording",
+        "C": "APIs make bots work slower",
+        "D": "APIs are only for front-end automation",
+        "Answer": "A"
+      },
+      {
+        "Question": "What is required to authenticate an API call in RPA?",
+        "A": "API key or OAuth token",
+        "B": "Screen recording",
+        "C": "Manual user input",
+        "D": "No authentication required",
+        "Answer": "A"
+      },
+      {
+        "Question": "Why is error handling important in API-based RPA automation?",
+        "A": "API responses can vary or fail due to network issues",
+        "B": "APIs always return successful responses",
+        "C": "APIs do not handle authentication",
+        "D": "Bots do not interact with APIs",
+        "Answer": "A"
+      },
+      {
+        "Question": "Which UiPath activity is used to call an API endpoint?",
+        "A": "HTTP Request",
+        "B": "Write CSV",
+        "C": "Click Activity",
+        "D": "Send Hotkey",
+        "Answer": "A"
+      },
+      {
+        "Question": "What HTTP method is commonly used to retrieve data from an API in RPA?",
+        "A": "GET",
+        "B": "POST",
+        "C": "DELETE",
+        "D": "PATCH",
+        "Answer": "A"
+      },
+      {
+        "Question": "In Automation Anywhere, how do you pass API authentication credentials?",
+        "A": "Using headers or query parameters",
+        "B": "Storing credentials in logs",
+        "C": "Entering credentials manually each time",
+        "D": "Using only unencrypted text",
+        "Answer": "A"
+      },
+      {
+        "Question": "In Blue Prism, which stage is used to integrate APIs?",
+        "A": "Web Services Stage",
+        "B": "Decision Stage",
+        "C": "Calculation Stage",
+        "D": "Wait Stage",
+        "Answer": "A"
+      },
+      {
+        "Question": "A bot receives a 401 error when calling an API. What does this indicate?",
+        "A": "Unauthorized access",
+        "B": "Successful API call",
+        "C": "Malformed API request",
+        "D": "Server outage",
+        "Answer": "A"
+      },
+      {
+        "Question": "What is the best way to handle API rate limits in RPA automation?",
+        "A": "Implement retry mechanisms with delays",
+        "B": "Ignore rate limits and retry immediately",
+        "C": "Increase bot execution speed",
+        "D": "Disable authentication",
+        "Answer": "A"
+      },
+      {
+        "Question": "A bot receives an intermittent 500 error from an API. What should be the next step?",
+        "A": "Implement retry logic and check API availability",
+        "B": "Stop using the API",
+        "C": "Delete and recreate the bot",
+        "D": "Use UI automation instead",
+        "Answer": "A"
+      }
+    ],
+    "spring boot": [
+      {
+        "Question": "What is the primary feature of Spring Boot?",
+        "A": "Simplifies data access",
+        "B": "Automates code generation",
+        "C": "Simplifies project setup",
+        "D": "Enhances UI design",
+        "Answer": "C"
+      },
+      {
+        "Question": "Which build tool is used by Spring Boot?",
+        "A": "Maven",
+        "B": "Ant",
+        "C": "Gradle",
+        "D": "CMake",
+        "Answer": "A"
+      },
+      {
+        "Question": "What does the @SpringBootApplication annotation do?",
+        "A": "Enables JDBC",
+        "B": "Configures a web application",
+        "C": "Declares a configuration class",
+        "D": "Starts a Spring context",
+        "Answer": "C"
+      },
+      {
+        "Question": "How does Spring Boot handle configuration?",
+        "A": "Through YAML files",
+        "B": "Through properties files",
+        "C": "Through XML files",
+        "D": "Manually via code",
+        "Answer": "B"
+      },
+      {
+        "Question": "What embedded servers does Spring Boot support?",
+        "A": "Jetty",
+        "B": "Tomcat",
+        "C": "Undertow",
+        "D": "Netty",
+        "Answer": "B"
+      },
+      {
+        "Question": "Which module of Spring Framework is the foundation for Spring Boot?",
+        "A": "Spring MVC",
+        "B": "Spring Core",
+        "C": "Spring AOP",
+        "D": "Spring ORM",
+        "Answer": "B"
+      },
+      {
+        "Question": "Spring Boot is best suited for creating what type of applications?",
+        "A": "Batch applications",
+        "B": "Web applications",
+        "C": "Enterprise applications",
+        "D": "Desktop applications",
+        "Answer": "B"
+      },
+      {
+        "Question": "What is the advantage of the Spring Boot Actuator?",
+        "A": "Managing app profiles",
+        "B": "Enhancing app security",
+        "C": "Monitoring and managing app",
+        "D": "Application logging",
+        "Answer": "C"
+      },
+      {
+        "Question": "How can you externalize configuration in a Spring Boot application?",
+        "A": "Using Java files",
+        "B": "Using environment variables",
+        "C": "Using XML files",
+        "D": "Using property files",
+        "Answer": "B"
+      },
+      {
+        "Question": "What role does Spring Boot DevTools play?",
+        "A": "Improving build speed",
+        "B": "Automatic restart",
+        "C": "Code generation",
+        "D": "Dependency management",
+        "Answer": "B"
+      }
+    ]
+  }
+}

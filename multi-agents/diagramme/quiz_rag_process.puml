@@ -1,0 +1,104 @@
+@startuml Quiz Generation RAG Process
+
+skinparam componentStyle uml2
+skinparam component {
+    BackgroundColor<<Agent>> LightYellow
+    BackgroundColor<<Tool>> LightGray
+    BackgroundColor<<Data>> LightGreen
+    BackgroundColor<<LLM>> LightPink
+    BackgroundColor<<Vector>> Orange
+    BackgroundColor<<External>> Purple
+}
+
+package "Quiz Generation System" {
+    component "Quiz Generator Agent" <<Agent>> as quiz_agent {
+        [Question Generation Chain] as question_chain
+    }
+    
+    package "Core Components" {
+        [Hugging Face Embeddings] <<Tool>> as hf_embeddings
+        note right of hf_embeddings
+            Model: OrdalieTech/Solon-embeddings-large-0.1
+        end note
+        
+        [Gemini Pro LLM] <<LLM>> as gemini
+        note right of gemini
+            Temperature: 0.7
+            Model: gemini-pro
+        end note
+    }
+    
+    package "Vector Store" {
+        database "Qdrant" {
+            [Technical Questions Collection] <<Vector>> as tech_questions
+        }
+        note right of tech_questions
+            Collection Name: technical_questions
+            Filters by skill
+        end note
+    }
+    
+    package "Form Distribution" {
+        [Form Distribution Agent] <<Agent>> as form_agent
+        [Google Form Creator] <<Tool>> as form_creator
+        [Email Sender] <<Tool>> as email_sender
+    }
+}
+
+' Process Steps
+package "Quiz Generation Flow" {
+    [1. Parse Job ID & Skills] as parse_input
+    [2. Get Context per Skill] as get_context
+    [3. Generate Questions] as gen_questions
+    [4. Create Quiz Structure] as create_quiz
+    [5. Distribute Assessment] as distribute
+}
+
+' External Services
+cloud "External Services" {
+    [Google Forms API] <<External>> as google_api
+    [SMTP Server] <<External>> as smtp
+}
+
+' Data Formats
+package "Data Formats" {
+    component "Quiz Data" <<Data>> as quiz_data
+    note right of quiz_data
+        Structure:
+        - job_id: string
+        - offer_title: string
+        - quiz: Map<skill, questions[]>
+    end note
+    
+    component "Form Result" <<Data>> as form_result
+    note right of form_result
+        Structure:
+        - form_url: string
+        - emails_sent: string[]
+        - status: Map<email, status>
+    end note
+}
+
+' Process Flow
+quiz_agent --> parse_input
+parse_input --> get_context
+get_context --> hf_embeddings
+hf_embeddings --> tech_questions : "similarity search"
+get_context --> gen_questions : "context"
+gen_questions --> gemini : "generate MCQs"
+gen_questions --> create_quiz
+create_quiz --> quiz_data
+quiz_data --> form_agent
+form_agent --> form_creator
+form_creator --> google_api
+form_agent --> email_sender
+email_sender --> smtp
+form_agent --> form_result
+
+' Configuration Dependencies
+quiz_agent ...> gemini : "uses"
+quiz_agent ...> hf_embeddings : "uses"
+form_creator ...> google_api : "creates forms"
+email_sender ...> smtp : "sends emails"
+
+@enduml 

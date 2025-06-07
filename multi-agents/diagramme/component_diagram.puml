@@ -1,0 +1,115 @@
+@startuml Multi-Agents System Component Diagram
+
+skinparam componentStyle uml2
+skinparam component {
+    BackgroundColor<<Core>> LightBlue
+    BackgroundColor<<Agent>> LightYellow
+    BackgroundColor<<Data>> LightGreen
+    BackgroundColor<<Tool>> LightGray
+    BackgroundColor<<External>> Pink
+    BackgroundColor<<Config>> LightCyan
+}
+
+package "Multi-Agents System" {
+    package "Core System" {
+        [CrewAI Workflow Manager] <<Core>> as workflow
+        [Process Orchestrator] <<Core>> as orchestrator
+        note right of orchestrator
+            Sequential process flow
+            managing agent interactions
+        end note
+    }
+
+    package "Agents" {
+        package "Job Processing" {
+            [Job Offer Agent] <<Agent>> as job_agent
+            [Job Offer Fetcher Tool] <<Tool>> as job_tool
+            [Entity Extractor Tool] <<Tool>> as entity_tool
+        }
+
+        package "CV Processing" {
+            [CV Analysis Agent] <<Agent>> as cv_agent
+            [CV Ranker Agent] <<Agent>> as rank_agent
+            [CV Fetcher Tool] <<Tool>> as cv_tool
+            [CV Entity Extractor] <<Tool>> as cv_entity_tool
+        }
+
+        package "Assessment" {
+            [Quiz Generator Agent] <<Agent>> as quiz_agent
+            [Form Distribution Agent] <<Agent>> as form_agent
+            [Quiz Generation Tool] <<Tool>> as quiz_tool
+            [Form Distribution Tool] <<Tool>> as form_tool
+        }
+    }
+
+    package "Data Storage" {
+        database "MongoDB" {
+            [Job Offers] <<Data>> as job_data
+            [CVs] <<Data>> as cv_data
+            [Quiz Data] <<Data>> as quiz_data
+            [Assessment Results] <<Data>> as results_data
+        }
+    }
+
+    package "External Services" {
+        [Google Forms API] <<External>> as google_forms
+        [Email Service (SMTP)] <<External>> as email_service
+    }
+
+    package "Configuration" {
+        [LLM Config (Gemini)] <<Config>> as llm_config
+        [Environment Variables] <<Config>> as env_config
+    }
+}
+
+' Core Relations
+workflow --> orchestrator
+orchestrator --> job_agent
+orchestrator --> cv_agent
+orchestrator --> rank_agent
+orchestrator --> quiz_agent
+orchestrator --> form_agent
+
+' Job Processing Relations
+job_agent --> job_tool
+job_agent --> entity_tool
+job_tool --> job_data
+
+' CV Processing Relations
+cv_agent --> cv_tool
+cv_agent --> cv_entity_tool
+cv_tool --> cv_data
+rank_agent --> cv_data
+
+' Assessment Relations
+quiz_agent --> quiz_tool
+quiz_tool --> quiz_data
+form_agent --> form_tool
+form_tool --> results_data
+
+' External Service Relations
+form_agent --> google_forms
+form_agent --> email_service
+
+' Configuration Relations
+job_agent ..> llm_config
+cv_agent ..> llm_config
+rank_agent ..> llm_config
+quiz_agent ..> llm_config
+form_agent ..> llm_config
+
+form_agent ..> env_config
+email_service ..> env_config
+
+' Interfaces
+interface "Job Processing" as job_interface
+interface "CV Analysis" as cv_interface
+interface "Assessment Generation" as assessment_interface
+interface "Form Distribution" as form_interface
+
+job_agent -( job_interface
+cv_agent -( cv_interface
+quiz_agent -( assessment_interface
+form_agent -( form_interface
+
+@enduml 

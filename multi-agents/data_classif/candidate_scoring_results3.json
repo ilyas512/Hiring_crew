@@ -1,0 +1,63 @@
+```json
+{
+  "job_offer": {
+    "offer_id": "68245d91b285ae9b4f846cd9",
+    "offer_title": "Java Backend Developer",
+    "entities": {
+      "hard_skills": [
+        "spring boot",
+        "rest api",
+        "jpa/hibernate",
+        "postgresql",
+        "mysql",
+        "mongodb",
+        "maven",
+        "gradle",
+        "git",
+        "ci/cd",
+        "docker",
+        "kubernetes",
+        "aws",
+        "gcp",
+        "kafka",
+        "rabbitmq",
+        "elk stack",
+        "prometheus",
+        "grafana",
+        "java"
+      ],
+      "soft_skills": [],
+      "experience": [
+        "4+ years of professional experience with java"
+      ],
+      "education": []
+    }
+  },
+  "candidates": [
+    {
+      "candidate_id": "68246d346080c99a01a0f251",
+      "full_name": "ISLAH ISLAH",
+      "email": "zinebislah2003@gmail.com",
+      "score": "25%",
+      "tier": "Tier 4",
+      "summary": "Hard skills: 20%; Soft skills: 0%; Experience: 0%; Education: 0%"
+    },
+    {
+      "candidate_id": "68246e8d6080c99a01a0f257",
+      "full_name": "Thomas Dubois",
+      "email": "exemple@cvmaker.fr",
+      "score": "15%",
+      "tier": "Tier 4",
+      "summary": "Hard skills: 10%; Soft skills: 0%; Experience: 0%; Education: 0%"
+    },
+    {
+      "candidate_id": "682472b96080c99a01a0f25b",
+      "full_name": "Yuki Tanaka",
+      "email": "yuki.tanaka@example.com",
+      "score": "10%",
+      "tier": "Tier 4",
+      "summary": "Hard skills: 5%; Soft skills: 0%; Experience: 0%; Education: 0%"
+    }
+  ]
+}
+```

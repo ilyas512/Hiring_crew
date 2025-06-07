@@ -1,0 +1,74 @@
+{
+    "spring boot": [
+        {
+            "Question": "What role does Spring Boot DevTools play?",
+            "A": "Improving build speed",
+            "B": "Automatic restart",
+            "C": "Code generation",
+            "D": "Dependency management",
+            "Answer": "B"
+        },
+        {
+            "Question": "What is the primary feature of Spring Boot?",
+            "A": "Simplifies data access",
+            "B": "Automates code generation",
+            "C": "Simplifies project setup",
+            "D": "Enhances UI design",
+            "Answer": "C"
+        }
+    ],
+    "java core": [
+        {
+            "Question": "What is the purpose of the `synchronized` keyword in Java?",
+            "A": "To create JavaBeans",
+            "B": "To execute SQL queries",
+            "C": "To create a synchronized block of code for multithreading",
+            "D": "To define JavaBean properties",
+            "Answer": "C"
+        },
+        {
+            "Question": "What does the `this` keyword refer to in Java?",
+            "A": "The parent class",
+            "B": "The current package",
+            "C": "The main method",
+            "D": "The current instance of the class",
+            "Answer": "D"
+        }
+    ],
+    "rest api": [
+        {
+            "Question": "What HTTP method is typically used to update an existing resource?",
+            "A": "GET",
+            "B": "POST",
+            "C": "PUT",
+            "D": "DELETE",
+            "Answer": "C"
+        },
+        {
+            "Question": "Which HTTP status code indicates a successful creation of a resource?",
+            "A": "200 OK",
+            "B": "201 Created",
+            "C": "204 No Content",
+            "D": "400 Bad Request",
+            "Answer": "B"
+        }
+    ],
+    "jpa": [
+        {
+            "Question": "What is the purpose of the @Entity annotation in JPA?",
+            "A": "To mark a class as a service",
+            "B": "To mark a class as a repository",
+            "C": "To mark a class as a persistent entity",
+            "D": "To mark a class as a controller",
+            "Answer": "C"
+        },
+        {
+            "Question": "Which JPA annotation is used to specify the primary key of an entity?",
+            "A": "@PrimaryKey",
+            "B": "@Key",
+            "C": "@Id",
+            "D": "@Identity",
+            "Answer": "C"
+        }
+    ]
+} 

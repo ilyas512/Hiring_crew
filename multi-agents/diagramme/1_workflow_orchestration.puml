@@ -1,0 +1,48 @@
+@startuml Workflow and Orchestration
+
+skinparam componentStyle uml2
+skinparam component {
+    BackgroundColor<<Core>> LightBlue
+    BackgroundColor<<Agent>> LightYellow
+    BackgroundColor<<Config>> LightCyan
+}
+
+package "Core Workflow System" {
+    [CrewAI Workflow Manager] <<Core>> as workflow
+    [Process Orchestrator] <<Core>> as orchestrator
+    [LLM Config (Gemini)] <<Config>> as llm_config
+    
+    note right of orchestrator
+        Sequential Process Flow:
+        1. Job Offer Processing
+        2. CV Analysis
+        3. Candidate Ranking
+        4. Quiz Generation
+        5. Form Distribution
+    end note
+}
+
+package "Main Agents" {
+    [Job Offer Agent] <<Agent>> as job_agent
+    [CV Analysis Agent] <<Agent>> as cv_agent
+    [CV Ranker Agent] <<Agent>> as rank_agent
+    [Quiz Generator Agent] <<Agent>> as quiz_agent
+    [Form Distribution Agent] <<Agent>> as form_agent
+}
+
+' Core Relations
+workflow --> orchestrator
+orchestrator --> job_agent : "1. Start"
+orchestrator --> cv_agent : "2. Process"
+orchestrator --> rank_agent : "3. Rank"
+orchestrator --> quiz_agent : "4. Generate"
+orchestrator --> form_agent : "5. Distribute"
+
+' Configuration Relations
+job_agent ..> llm_config
+cv_agent ..> llm_config
+rank_agent ..> llm_config
+quiz_agent ..> llm_config
+form_agent ..> llm_config
+
+@enduml 

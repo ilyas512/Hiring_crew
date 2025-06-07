@@ -1,0 +1,86 @@
+```json
+{
+  "job_offer": {
+    "offer_id": "68245d91b285ae9b4f846cd9",
+    "offer_title": "Java Backend Developer",
+    "entities": {
+      "hard_skills": [
+        "spring boot",
+        "rest api",
+        "jpa/hibernate",
+        "postgresql",
+        "mysql",
+        "mongodb",
+        "maven",
+        "gradle",
+        "git",
+        "ci/cd",
+        "docker",
+        "kubernetes",
+        "aws",
+        "gcp",
+        "kafka",
+        "rabbitmq",
+        "elk stack",
+        "prometheus",
+        "grafana"
+      ],
+      "soft_skills": [],
+      "experience": [
+        "4+ years of professional experience with java"
+      ],
+      "education": []
+    }
+  },
+  "candidates": [
+    {
+      "candidate_id": "68344d8fa848fbeb5bb2cc0a",
+      "full_name": "you example",
+      "email": "you@example.com",
+      "score": "88%",
+      "tier": "Tier 1",
+      "summary": "High score due to strong hard skills match (spring boot, jpa/hibernate, mongodb, kafka, git, ci/cd, docker, kubernetes, aws,  maven, gradle,  postgresql, mysql,  prometheus, grafana, rest api) and relevant project experience."
+    },
+    {
+      "candidate_id": "68246d346080c99a01a0f251",
+      "full_name": "ISLAH ISLAH",
+      "email": "zinebislah2003@gmail.com",
+      "score": "22%",
+      "tier": "Tier 4",
+      "summary": "Low score due to limited hard skills match (java, spring, mongodb, kafka) and lack of relevant experience."
+    },
+    {
+      "candidate_id": "68246e8d6080c99a01a0f257",
+      "full_name": "Thomas Dubois",
+      "email": "exemple@cvmaker.fr",
+      "score": "18%",
+      "tier": "Tier 4",
+      "summary": "Low score due to limited hard skills match (mysql, mongodb, django) and lack of relevant experience."
+    },
+    {
+      "candidate_id": "682472b96080c99a01a0f25b",
+      "full_name": "Yuki Tanaka",
+      "email": "yuki.tanaka@example.com",
+      "score": "16%",
+      "tier": "Tier 4",
+      "summary": "Low score due to limited hard skills match (aws, mongodb) and lack of relevant experience."
+    },
+    {
+      "candidate_id": "68286effa2821b79773182d6",
+      "full_name": "AYOUB AIT MOULA",
+      "email": "aitmoula.ayoub01@gmail.com",
+      "score": "14%",
+      "tier": "Tier 4",
+      "summary": "Low score due to limited hard skills match (mysql, mongodb, python, sql, postgresql) and lack of relevant experience."
+    },
+    {
+      "candidate_id": "6828703da2821b79773182dc",
+      "full_name": "ILYAS OULACHGUAR",
+      "email": "oulachguarilyas@gmail.com",
+      "score": "20%",
+      "tier": "Tier 4",
+      "summary": "Low score due to limited hard skills match (mysql, mongodb, sql, java, python, postgresql) and lack of relevant experience."
+    }
+  ]
+}
+```

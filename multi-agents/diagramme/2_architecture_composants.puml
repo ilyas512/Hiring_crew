@@ -1,0 +1,112 @@
+@startuml Component Architecture
+
+skinparam componentStyle uml2
+skinparam component {
+    BackgroundColor<<Agent>> LightYellow
+    BackgroundColor<<Tool>> LightGray
+    BackgroundColor<<Model>> Pink
+    BackgroundColor<<Service>> LightBlue
+}
+
+package "Agent Components" {
+    package "Job Offer Processing" {
+        component "Job Offer Agent" <<Agent>> {
+            [Job Offer Fetcher Tool]
+            [Entity Extractor Tool]
+        }
+    }
+
+    package "CV Processing" {
+        component "CV Analysis Agent" <<Agent>> {
+            [CV Fetcher Tool]
+            [CV Entity Extractor]
+            [PDF Parser]
+        }
+        
+        component "CV Ranker Agent" <<Agent>> {
+            [Ranking Algorithm]
+            [Score Calculator]
+        }
+    }
+
+    package "Quiz System" {
+        component "Quiz Generator Agent" <<Agent>> {
+            [Question Generation Chain]
+            [Context Retriever]
+            [Validation Tool]
+        }
+        
+        component "Form Distribution Agent" <<Agent>> {
+            [Form Creator Tool]
+            [Email Distribution Tool]
+        }
+    }
+}
+
+package "AI Models" {
+    package "Language Models" <<Model>> {
+        [Gemini Pro] as gemini
+        [Hugging Face Embeddings] as hf
+    }
+    
+    package "Vector Database" <<Model>> {
+        [Qdrant Client]
+        [Vector Search]
+    }
+}
+
+package "External Services" {
+    package "Google Services" <<Service>> {
+        [Google Forms API]
+        [Gmail API]
+    }
+    
+    package "Storage Services" <<Service>> {
+        [MongoDB Atlas]
+        [GridFS]
+    }
+}
+
+package "Tools & Utilities" {
+    package "Common Tools" <<Tool>> {
+        [Configuration Loader]
+        [Logger]
+        [Error Handler]
+    }
+    
+    package "Data Processing" <<Tool>> {
+        [Data Validator]
+        [Format Converter]
+        [Text Processor]
+    }
+}
+
+' Agent Interactions
+[Job Offer Agent] --> [CV Analysis Agent] : provides skills
+[CV Analysis Agent] --> [CV Ranker Agent] : provides data
+[CV Ranker Agent] --> [Quiz Generator Agent] : top candidates
+[Quiz Generator Agent] --> [Form Distribution Agent] : quiz content
+
+' Tool Usage
+[Job Offer Agent] ..> [Entity Extractor Tool]
+[CV Analysis Agent] ..> [PDF Parser]
+[Quiz Generator Agent] ..> [Question Generation Chain]
+[Form Distribution Agent] ..> [Form Creator Tool]
+
+' External Service Usage
+[Form Creator Tool] --> [Google Forms API]
+[Email Distribution Tool] --> [Gmail API]
+[CV Fetcher Tool] --> [GridFS]
+[Context Retriever] --> [Qdrant Client]
+
+' Model Integration
+[Question Generation Chain] --> gemini
+[Context Retriever] --> hf
+[Vector Search] --> [Qdrant Client]
+
+' Utility Usage
+[Configuration Loader] --> [Environment Variables]
+[Logger] --> [Error Handler]
+[Data Validator] --> [Format Converter]
+
+@enduml 
